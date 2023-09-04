@@ -1,0 +1,26 @@
+.placeholder_text {
+    color: $black30;
+}
+
+.text {
+    &-semibold { font-weight: 600; }
+    &-bold { font-weight: bold; }
+
+    &-uppercase { text-transform: uppercase }
+
+    &-right { text-align: right !important; }
+    &-center { text-align: center !important; }
+    &-left { text-align: left !important; }
+
+    &-grey { color: $grey; }
+    &-yellow { color: $yellow; }
+    &-red { color: $red; }
+}
+
+.font {
+    &-12 {
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+

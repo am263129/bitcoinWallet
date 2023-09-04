@@ -1,0 +1,25 @@
+.footer {
+    font-size: 14px;
+    line-height: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+
+    &__extra {
+        padding-top: 30px;
+
+        &-row {
+            padding-top: 8px;
+        }
+    }
+
+    &__title {
+        color: $yellow;
+        padding-bottom: 10px;
+    }
+
+    &__email {
+        color: $black;
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,242 @@
+.ReactTable {
+    padding-bottom: 50px;
+    border: 0;
+    margin-left: -20px;
+    margin-right: -20px;
+
+    .rt-table {
+        overflow: inherit;
+    }
+
+    .rt-th,
+    .rt-td {
+        overflow: visible;
+    }
+
+    .rt-tr {
+        align-items: center;
+        border-bottom: 1px solid $black10;
+        padding-left: 20px;
+        padding-right: 20px;
+        transition:
+                background-color .3s ease-in-out,
+                padding .3s ease-in-out,
+                margin .3s ease-in-out,
+    }
+
+    .rt-thead {
+        min-width: 980px!important;
+
+        &.-header {
+            box-shadow: none;
+
+            .rt-tr {
+                border-bottom: 1px solid $black;
+                padding-top: 15px;
+                padding-bottom: 12px;
+                text-transform: uppercase;
+            }
+        }
+
+        .rt-th,
+        .rt-td {
+            border: 0;
+            box-shadow: none;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.3;
+            padding: 0;
+            text-align: left;
+
+            &.-sort-asc,
+            &.-sort-desc {
+                box-shadow: none;
+
+                .sortable {
+                    position: relative;
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        left: calc(100% + 10px);
+                        top: 7px;
+                        border-width: 0 3px 4px 3px;
+                        border-color: transparent transparent $black transparent;
+                        transition: transform .2s;
+                    }
+                }
+            }
+
+            &.-sort-asc .sortable:after {
+                transform: translateY(-10%);
+            }
+
+            &.-sort-desc .sortable:after {
+                transform: rotate(180deg);
+            }
+        }
+
+        .tooltip-wp {
+            position: relative;
+        }
+    }
+
+    .rt-tbody {
+        min-width: 980px!important;
+        padding-bottom: 5px;
+        overflow: visible;
+
+        .rt-tr-group {
+            border: none;
+        }
+
+        .rt-td {
+            border: 0;
+            font-size: 14px;
+            line-height: 1;
+            padding: 15px 10px 12px 0;
+
+            &:first-child {
+                padding-right: 10px;
+            }
+
+            &:first-child > span {
+                position: relative;
+                display: inline-block;
+
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 100%;
+                    transform: translateY(-50%);
+                }
+            }
+
+            .visible-on-hover:hover {
+                overflow: visible;
+
+                > * {
+                    background: $white;
+                    z-index: 1;
+                    position: absolute;
+                    padding: 8px 10px;
+                    margin-top: -8px;
+                    margin-left: -10px;
+                }
+            }
+        }
+
+        .-padRow {
+            display: none;
+        }
+
+        .rt-tr:not(.-padRow):hover {
+            background-color: $yellow10;
+
+            .table__button {
+                opacity: 1;
+                pointer-events: all;
+                font-size: 12px;
+            }
+        }
+
+        .green {
+            color: $green;
+        }
+    }
+
+    .-pagination {
+        box-shadow: none;
+        border: 0;
+    }
+
+    .pagination-bottom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 25px;
+        margin: 0 auto;
+        position: relative;
+
+        .pagination__item {
+            border: 0;
+            background: transparent;
+            font-size: 14px;
+            line-height: 1;
+            color: $black;
+            cursor: pointer;
+            padding: 0 5px;
+            transition: color .2s;
+
+            &:hover:not(.pagination__not-item),
+            &:focus:not(.pagination__not-item),
+            &.pagination__current {
+                color: $yellow;
+            }
+
+            &.pagination__prev,
+            &.pagination__next {
+                position: absolute;
+                font-size: 20px;
+                margin-top: -2px;
+            }
+
+            &.pagination__prev {
+                left: -21px;
+            }
+
+            &.pagination__next {
+                right: -21px;
+            }
+        }
+
+        .pagination__not-item {
+            cursor: default;
+        }
+    }
+}
+
+.table {
+    &__button {
+        opacity: 0;
+        pointer-events: none;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        font-size: 0;
+        line-height: 1;
+        color: $yellow;
+        font-weight: 600;
+        padding: 0 5px;
+        margin-top: 2px;
+        transition: opacity $default-transition, font-size $default-transition;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .ReactTable {
+        overflow-y: hidden;
+
+        .rt-table {
+            overflow-y: auto;
+        }
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .ReactTable .rt-tbody .rt-td .visible-on-hover:hover > * {
+        position: initial;
+    }
+}

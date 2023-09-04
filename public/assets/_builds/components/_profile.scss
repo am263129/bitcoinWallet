@@ -1,0 +1,132 @@
+.profile {
+    &__block {
+        padding: 40px 0 40px 60px;
+        border-bottom: 1px solid $grey50;
+
+        .Select.has-value .Select-control{
+            border: 1px solid $grey30;
+        }
+    }
+
+    &__title {
+        @extend .block__title;
+        color: $yellow;
+        margin-left: -60px;
+        padding-left: 60px;
+
+        &--wallet-name {
+            background: url(../images/icons/wallet.svg) no-repeat center left;
+            background-size: 30px 30px;
+        }
+
+        &--pay_req {
+            background: url(../images/payment-request.svg) no-repeat center left;
+            background-size: 30px 30px;
+        }
+
+        &--settings {
+            background: url(../images/settings.svg) no-repeat center left;
+            background-size: 30px 30px;
+        }
+    }
+
+    &__row {
+        @extend .row;
+        padding-top: 20px;
+    }
+
+    &__line {
+        @extend .row;
+        @extend .row--no-col;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+
+        &-center {
+            @extend .row;
+            @extend .row--no-col;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+    }
+
+    &__label {
+        width: 180px;
+        flex: 0 0 180px;
+        font-weight: bold;
+        padding-right: 10px;
+
+        &--normal {
+            font-weight: normal;
+        }
+    }
+
+    &__value {
+        @extend .row;
+        @extend .row--no-col;
+        margin: 0;
+        flex: 1 1 auto;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        max-width: calc(100% - 180px);
+
+        &--start {
+            justify-content: flex-start;
+        }
+
+        &_ellipsis {
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        &_utils {
+            margin-left: 10px;
+            @extend .center-content;
+
+            span + span {
+                margin-left: 20px;
+            }
+        }
+
+        .Select {
+            min-width: 140px;
+        }
+    }
+
+    &__button {
+        &-label {
+            text-transform: capitalize;
+
+            & + .button,
+            & + .link {
+                margin-left: 40px;
+            }
+        }
+    }
+
+    &__app-status {
+        margin-right: 20px;
+
+        &.button + .button {
+            margin-left: 0;
+        }
+    }
+}
+
+@media screen and (max-width: $phablet-width) {
+    .profile {
+        &__line {
+            flex-wrap: wrap;
+        }
+
+        &__label {
+            width: 100%;
+            flex-basis: 100%;
+        }
+
+        &__value {
+            max-width: 100%;
+        }
+    }
+}

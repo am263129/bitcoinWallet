@@ -1,0 +1,133 @@
+.notifications {
+    &-bc {
+        position: fixed;
+        width: 540px;
+        max-width: calc(100% - 40px);
+        padding: 0;
+        z-index: 9998;
+        box-sizing: border-box;
+        height: auto;
+        top: auto;
+        bottom: 25px;
+        transform: translateX(-50%);
+        left: 50%;
+    }
+}
+
+.notification {
+    position: relative;
+    width: 100%;
+    border-radius: 2px;
+    padding: 15px 40px;
+    display: block;
+    box-sizing: border-box;
+    transition: 0.3s ease-in-out;
+    transform: translate3d(0px, 0px, 0px);
+    will-change: transform, opacity;
+    color: $black;
+    bottom: 0;
+    opacity: 0;
+    margin-top: 10px;
+
+    &-error {
+        cursor: pointer;
+        background: $red-shadow;
+        display: flex;
+        align-items: center;
+
+        .notification-message {
+            padding-left: 50px;
+            background: url(../images/error-message.svg) no-repeat left center;
+            color: $red;
+            flex: 1;
+        }
+    }
+
+    &-info {
+        background-color: $yellow;
+        text-align: center;
+    }
+
+    &-visible {
+        opacity: 1;
+    }
+
+    &-message {
+        margin: 0;
+        padding: 5px 0;
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        line-height: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+
+        &:first-letter {
+            text-transform: uppercase;
+        }
+
+        &--helper {
+            line-height: 1.5;
+            margin-top: 15px;
+
+            ul {
+                margin-top: 0;
+                -webkit-padding-start: 20px;
+                -webkit-margin-after: 0;
+            }
+        }
+
+        &--error {
+            display: inline-block;
+            max-height: 84px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &-dismiss {
+        display: none;
+        font-family: Arial, serif;
+        font-size: 17px;
+        position: absolute;
+        top: 4px;
+        right: 5px;
+        line-height: 15px;
+        background-color: rgb(176, 202, 146);
+        color: rgb(240, 245, 234);
+        border-radius: 50%;
+        width: 14px;
+        height: 14px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    &-action-wrapper {
+        margin: 0;
+        padding: 0 0 0 15px;
+    }
+
+    &-action-button {
+        margin: 0;
+        border: 0;
+        background: none;
+        padding: 0;
+        font-size: 14px;
+        line-height: 2.15;
+        color: $black;
+        font-weight: 400;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+}
+
+@media screen and (max-width: 581px) {
+    .notification{
+        padding: 15px 20px;
+
+        &-action-wrapper {
+            padding-left: 5px;
+        }
+    }
+}

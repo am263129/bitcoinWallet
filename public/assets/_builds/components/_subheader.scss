@@ -1,0 +1,85 @@
+.subheader {
+    background-color: $grey-extralight;
+    min-height: 80px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+
+    .balance {
+        font-size: 14px;
+        line-height: 1;
+        color: #000;
+
+        &__row {
+            position: relative;
+            padding: 5px 0;
+            white-space: nowrap;
+        }
+
+        &__title {
+            width: 190px;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        &__value {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+    }
+
+    .exchange_rate {
+        color: $grey;
+
+        & + .button {
+            margin-left: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .subheader {
+        .exchange_rate {
+            display: none;
+        }
+
+        .button {
+            margin-top: 2px;
+        }
+
+        .converted-part {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .subheader {
+        .balance {
+            width: 100%;
+
+            &__title {
+                width: 170px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .subheader {
+
+        .balance {
+            margin-right: -10px;
+            width: calc(100% + 10px);
+
+            &__row {
+                white-space: normal;
+            }
+        }
+
+        &__exchange_rate {
+            .button {
+                float: right;
+            }
+        }
+    }
+}

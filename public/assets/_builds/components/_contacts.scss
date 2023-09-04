@@ -1,0 +1,58 @@
+.contacts {
+    .search {
+        width: 336px;
+        max-width: 100%;
+    }
+
+    .form-search {
+        background: url(../images/search.svg) no-repeat 10px center;
+        padding-left: 36px;
+    }
+
+    .ReactTable {
+        .rt-tbody {
+            .contacts {
+                &__lightningId {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+    }
+
+    .contacts {
+        &__lightning-wrapper {
+            display: flex;
+        }
+
+        &__actions {
+            margin-left: auto;
+        }
+    }
+}
+
+@media screen and (max-width: 979px) {
+    .contacts-page {
+        .ReactTable {
+            .rt-thead .rt-th {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contacts-page {
+        .ReactTable {
+            .rt-tbody {
+                .rt-tr:not(.-padRow):hover {
+                    .contacts {
+                        &__lightningId {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

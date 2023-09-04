@@ -1,0 +1,214 @@
+.modal {
+    width: 660px;
+    max-width: calc(100% - 40px);
+    z-index: 5;
+    position: relative;
+    border-radius: $border-radius;
+    background: $white;
+    padding: 50px;
+    outline: none;
+    overflow: hidden;
+
+    &__spinner {
+        position: absolute;
+        top: 17px;
+        right: 17px;
+        transform: none;
+    }
+
+    &__wrapper {
+        position: fixed;
+        background-color: $black30;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__layout {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__close {
+        background: none;
+        top: 10px;
+        right: 10px;
+        width: 20px;
+        height: 20px;
+        font-size: 0;
+        border: 0;
+        position: absolute;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:before,
+        &:after {
+            content: '';
+            height: 20px;
+            width: 1px;
+            display: block;
+            background: $grey-light;
+            left: 45%;
+            top: 0;
+            position: absolute;
+        }
+
+        &:before {
+            transform: rotate(45deg);
+        }
+
+        &:after {
+            transform: rotate(-45deg);
+        }
+    }
+
+    &__header {
+        & + .modal__body {
+            padding-top: 40px;
+        }
+    }
+
+    &__footer {
+        padding-top: 30px;
+    }
+
+    &--payment_result {
+        width: 334px;
+        padding: 50px;
+
+        &-success {
+            padding-bottom: 60px;
+            background: transparent url(../images/rectangle.svg) no-repeat center bottom;
+            background-size: 100% 100%;
+            box-shadow: 0 -3px 4px 0 rgba(176, 176, 176, 0.5);
+
+            .modal {
+                &__icon {
+                    background: url(../images/success.svg) no-repeat center top;
+                    background-size: 68px 68px;
+                    height: 68px;
+                }
+            }
+        }
+
+        &-error {
+            width: 368px;
+
+            .modal {
+                &__icon {
+                    background: url(../images/failed.svg) no-repeat center top;
+                    background-size: 68px 68px;
+                    height: 68px;
+                }
+            }
+
+            .helper {
+                &__header {
+                    color: $yellow;
+                }
+
+                &__list {
+                    list-style-type: disc;
+                    -webkit-padding-start: 16px;
+
+                    li {
+                        margin-top: 4px;
+                    }
+                }
+            }
+        }
+    }
+
+    &--small {
+        width: 300px;
+        padding: 40px 30px 20px;
+        text-align: center;
+
+        .modal {
+            &__header {
+                & + .modal__body {
+                    padding-top: 20px;
+                }
+            }
+
+            &__footer {
+                padding-top: 20px;
+            }
+        }
+    }
+
+    &--wide {
+        width: 740px;
+    }
+
+    &--body-20 {
+        .modal {
+            &__header {
+                & + .modal__body {
+                    padding-top: 20px;
+                }
+            }
+
+        }
+    }
+
+    &--body-0 {
+        .modal {
+            &__header {
+                & + .modal__body {
+                    padding-top: 0px;
+                }
+            }
+
+        }
+    }
+
+    &--wallet-mode {
+        width: 780px;
+    }
+
+    &--legal {
+        .license {
+            margin: -40px -40px -8px;
+            background-color: $white;
+        }
+    }
+}
+
+.modal-transition {
+    &-enter {
+        .modal {
+            transform: scale(.3);
+            opacity: 0;
+        }
+
+        &.modal-transition-enter-active .modal {
+            transform: scale(1);
+            opacity: 1;
+            transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+        }
+    }
+
+    &-leave {
+        .modal {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        &.modal-transition-leave-active .modal {
+            transform: scale(.3);
+            opacity: 0;
+            transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+        }
+    }
+}

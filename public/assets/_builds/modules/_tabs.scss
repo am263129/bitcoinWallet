@@ -1,0 +1,56 @@
+.tab {
+    &-link {
+        transition: color $default-transition, border-color $default-transition;
+        position: relative;
+        font-size: 16px;
+        line-height: 1.13;
+        color: $black;
+        text-transform: uppercase;
+        margin: 0 25px;
+        text-align: center;
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: transparent;
+            transition: background-color $default-transition;
+        }
+
+        &:not(.tab-link__no-hover) {
+            cursor: pointer;
+        }
+
+        &-active {
+            font-weight: normal!important;
+
+            &:before {
+                background-color: $yellow;
+            }
+        }
+
+        &:hover:not(.tab-link__no-hover) {
+            color: $yellow;
+            outline: none;
+        }
+
+        &:focus,
+        &:active {
+            outline: none;
+        }
+    }
+}
+
+.tabs {
+    &__row {
+        margin-left: -25px;
+        margin-right: -25px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
