@@ -1,5 +1,5 @@
 import fetch from "isomorphic-fetch";
-import { PEACH_API_HOST, BLOCK_HEIGHT_URL } from "config/node-settings";
+import { MFS_API_HOST, BLOCK_HEIGHT_URL } from "config/node-settings";
 import { exceptions } from "config";
 import { error } from "modules/notifications";
 import { successPromise, logger } from "additional";
@@ -9,7 +9,7 @@ import * as types from "./types";
 function getBlocksHeight() {
     return async (dispatch) => {
         let response;
-        const url = PEACH_API_HOST + types.ENDPOINT_BLOCK_HEIGHT;
+        const url = MFS_API_HOST + types.ENDPOINT_BLOCK_HEIGHT;
         try {
             response = await fetch(url, { method: "GET" });
             response = await response.json();
@@ -27,7 +27,7 @@ function getMerchants() {
     return async (dispatch) => {
         let response;
         dispatch(actions.merchantsRequest());
-        const url = PEACH_API_HOST + types.ENDPOINT_MERCHANTS;
+        const url = MFS_API_HOST + types.ENDPOINT_MERCHANTS;
         try {
             response = await fetch(url);
             response = await response.json();

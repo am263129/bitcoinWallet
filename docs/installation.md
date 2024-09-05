@@ -4,7 +4,7 @@
 
 There are some components that you need to use the wallet:
 
-1. [Wallet source](https://github.com/LightningPeach/lightning-peach-wallet.git)
+1. [Wallet source](https://github.com/LightningMFS/lightning-MFS-wallet.git)
 2. [Lnd](https://github.com/lightningnetwork/lnd) 
 (**we use fork of lnd until [pull request](https://github.com/lightningnetwork/lnd/pull/1501)
 will not be accepted to improve UX of the wallet. You can also use [lnd](https://github.com/lightningnetwork/lnd.git)**)
@@ -22,8 +22,8 @@ To install the wallet you need [nodejs v8.9.4+](https://nodejs.org/en/) and npm 
 ## Linux, MacOS
 
 ```bash
-git clone https://github.com/LightningPeach/lightning-peach-wallet.git
-cd lightning-peach-wallet/
+git clone https://github.com/LightningMFS/lightning-MFS-wallet.git
+cd lightning-MFS-wallet/
 npm install
 mkdir node_modules/executable/
 ```
@@ -106,7 +106,7 @@ related dependencies, run the following commands:
 **Note: we use fork of [lnd](https://github.com/lightningnetwork/lnd.git)**
 
 ```
-git clone https://github.com/LightningPeach/lnd.git $GOPATH/src/github.com/lightningnetwork/lnd
+git clone https://github.com/LightningMFS/lnd.git $GOPATH/src/github.com/lightningnetwork/lnd
 cd $GOPATH/src/github.com/lightningnetwork/lnd
 git checkout wallet-mainnet
 make && make install
@@ -137,12 +137,12 @@ npm run build
 application on Windows may show a warning message requesting additional 
 permissions for the Wallet application. This can happen during execution 
 of different commands, for example, `dep ensure -v`. In such a case you 
-should grant access to the Peach Wallet. This is required for 
+should grant access to the MFS Wallet. This is required for 
 correct work of the wallet.**
 
 ```bash
-git clone https://github.com/LightningPeach/lightning-peach-wallet.git
-cd lightning-peach-wallet\
+git clone https://github.com/LightningMFS/lightning-MFS-wallet.git
+cd lightning-MFS-wallet\
 npm install
 mkdir node_modules\executable\
 ```
@@ -183,7 +183,7 @@ related dependencies, run the following commands:
 **Note: we use fork of [lnd](https://github.com/lightningnetwork/lnd.git)**
 
 ```
-git clone https://github.com/LightningPeach/lnd.git %GOPATH%src\github.com\lightningnetwork\lnd
+git clone https://github.com/LightningMFS/lnd.git %GOPATH%src\github.com\lightningnetwork\lnd
 cd %GOPATH%\src\github.com\lightningnetwork\lnd
 git checkout wallet-mainnet
 dep ensure -v

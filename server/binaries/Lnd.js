@@ -604,7 +604,7 @@ class Lnd extends Exec {
         // certificate need custom certificate
         // let { stdout, stderr } = await exec("openssl ecparam -name prime256v1 -genkey -noout -out tls.key");
         // out = await exec(`openssl req -new -key tls.key -x509 -nodes -days 365
-        // -config openssl.cnf -subj "/O=Lightning Peach desktop wallet" -out tls.cert`);
+        // -config openssl.cnf -subj "/O=Lightning MFS desktop wallet" -out tls.cert`);
     }
     /**
      * Run lnd, set WalletUnlocker rpc service

@@ -19,8 +19,8 @@ class Footer extends PureComponent {
                         <div className="footer__title block__title-sm">
                             Contact Us
                         </div>
-                        <a className="footer__email main_text_14pt" href="mailto:hello@lightningpeach.com">
-                            hello@lightningpeach.com
+                        <a className="footer__email main_text_14pt" href="mailto:hello@lightningMFS.com">
+                            hello@lightningMFS.com
                         </a>
                     </div>
                     <div className="footer__extra">

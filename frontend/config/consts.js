@@ -108,8 +108,8 @@ export const INCOMING_RECURRING_NAME = "Incoming recurring payment";
 
 export const BLOCKCHAIN_INFO_HOST = "https://blockchain.info";
 export const ONEML_HOST = "https://1ml.com";
-export const PEACH_NODE_QUERY = "/node/02a0bc43557fae6af7be8e3a29fdebda819e439bea9c0f8eb8ed6a0201f3471ca9";
-export const PEACH_NODE_URL = `${ONEML_HOST}${PEACH_NODE_QUERY}`;
+export const MFS_NODE_QUERY = "/node/02a0bc43557fae6af7be8e3a29fdebda819e439bea9c0f8eb8ed6a0201f3471ca9";
+export const MFS_NODE_URL = `${ONEML_HOST}${MFS_NODE_QUERY}`;
 export const USD_PER_BTC_QUERY = "/ru/ticker";
 export const USD_PER_BTC_URL = `${BLOCKCHAIN_INFO_HOST}${USD_PER_BTC_QUERY}`;
 

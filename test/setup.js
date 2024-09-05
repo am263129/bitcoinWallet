@@ -11,7 +11,7 @@ const { window } = jsdom;
 
 // Constants
 window.env = process.env;
-window.PEACH = { replenishUrl: "replenishurl" };
+window.MFS = { replenishUrl: "replenishurl" };
 window.DB = { Connection: {}, Entities: {} };
 window.VERSION = {
     Legal: "Legalized",

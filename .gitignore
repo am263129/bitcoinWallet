@@ -11,7 +11,7 @@ log.log
 wallet-certs/
 executable/
 settings.local.ini
-settings.peach.local.json
+settings.MFS.local.json
 test/e2e/test_data/*
 .DS_Store
 *.testBackup
@@ -20,4 +20,4 @@ coverage/
 rpc.cert
 runlnd.sh
 settings.mainnet.ini
-settings.mainnet.peach.json
+settings.mainnet.MFS.json

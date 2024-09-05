@@ -1,18 +1,18 @@
 {
-  "name": "lightning-peach-wallet",
+  "name": "lightning-MFS-wallet",
   "version": "0.5.1-mainnet-beta",
   "main": "main.js",
   "license": "MIT",
-  "description": "Peach Wallet",
-  "homepage": "lightningpeach.com",
+  "description": "MFS Wallet",
+  "homepage": "lightningMFS.com",
   "author": {
-    "name": "LightningPeach",
-    "email": "contact@lightningpeach.com",
-    "url": "lightningpeach.com"
+    "name": "LightningMFS",
+    "email": "contact@lightningMFS.com",
+    "url": "lightningMFS.com"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lightningpeach/lightning-peach-wallet.git"
+    "url": "git+https://github.com/lightningMFS/lightning-MFS-wallet.git"
   },
   "private": true,
   "scripts": {
@@ -33,12 +33,12 @@
     "test:watch": "npm test -- --watch"
   },
   "build": {
-    "appId": "com.bitfury.lightning-peach.wallet.desktop",
-    "productName": "Peach Wallet",
+    "appId": "com.bitfury.lightning-MFS.wallet.desktop",
+    "productName": "MFS Wallet",
     "files": [
       "**/*",
       "!settings.local.ini",
-      "!settings.peach.local.json"
+      "!settings.MFS.local.json"
     ],
     "extraFiles": [
       {

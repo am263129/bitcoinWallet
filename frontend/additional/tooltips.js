@@ -23,7 +23,7 @@ export const RECOVER_WALLET = helpers.formatMultilineText([
     "1) If you want to use your existing Bitcoin wallet for Lightning payments",
     "then go through the wallet recovery procedure and specify the seed words",
     "from your Bitcoin wallet.",
-    <Fragment>2) If you have forgotten your Peach Wallet password then enter a <b>new</b></Fragment>,
+    <Fragment>2) If you have forgotten your MFS Wallet password then enter a <b>new</b></Fragment>,
     <Fragment>wallet name, <b>new</b> password and use the seed words you have for this wallet.</Fragment>,
 ]);
 
@@ -134,7 +134,7 @@ export const GENERATE_PAYMENT_REQUEST = helpers.formatMultilineText([
 
 export const MODE_STANDARD = (
     <Fragment>
-        In this mode your wallet never connects to the Peach server for any reason. The Extended Mode features are
+        In this mode your wallet never connects to the MFS server for any reason. The Extended Mode features are
         disabled.
     </Fragment>
 );
@@ -142,7 +142,7 @@ export const MODE_STANDARD = (
 export const MODE_EXTENDED = (
     <Fragment>
         In this mode you have a few extra features not yet present in the standard Lightning Network. These features
-        rely on the Peach server to route a transaction.
+        rely on the MFS server to route a transaction.
     </Fragment>
 );
 

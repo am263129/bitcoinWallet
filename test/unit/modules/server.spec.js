@@ -11,7 +11,7 @@ import {
 import { errorPromise, successPromise } from "additional";
 import serverReducer, { initStateServer } from "modules/server/reducers";
 import { notificationsTypes } from "modules/notifications";
-import { PEACH_API_HOST } from "config/node-settings";
+import { MFS_API_HOST } from "config/node-settings";
 import { exceptions } from "config";
 import { accountTypes } from "modules/account";
 import { store as defaultStore } from "store/configure-store";
@@ -94,7 +94,7 @@ describe("Server Unit Tests", () => {
 
         describe("getMerchants()", () => {
             it("404 error response", async () => {
-                nock(PEACH_API_HOST).get(types.ENDPOINT_MERCHANTS).reply(404);
+                nock(MFS_API_HOST).get(types.ENDPOINT_MERCHANTS).reply(404);
                 expectedActions = [
                     {
                         type: types.MERCHANTS_REQUEST,
@@ -120,7 +120,7 @@ describe("Server Unit Tests", () => {
             });
 
             it("404 error response", async () => {
-                nock(PEACH_API_HOST).get(types.ENDPOINT_MERCHANTS).reply(200);
+                nock(MFS_API_HOST).get(types.ENDPOINT_MERCHANTS).reply(200);
                 expectedActions = [
                     {
                         type: types.MERCHANTS_REQUEST,
@@ -158,7 +158,7 @@ describe("Server Unit Tests", () => {
                         logo: "/logo",
                     },
                 ];
-                nock(PEACH_API_HOST).get(types.ENDPOINT_MERCHANTS).reply(200, data);
+                nock(MFS_API_HOST).get(types.ENDPOINT_MERCHANTS).reply(200, data);
                 data = [
                     {
                         foo: "foo",
@@ -187,7 +187,7 @@ describe("Server Unit Tests", () => {
 
         describe("getBlocksHeight()", () => {
             it("error response", async () => {
-                nock(PEACH_API_HOST).get(types.ENDPOINT_BLOCK_HEIGHT).reply(404);
+                nock(MFS_API_HOST).get(types.ENDPOINT_BLOCK_HEIGHT).reply(404);
                 expectedData = {
                     payload: 0,
                     type: types.SET_NETWORK_BLOCKS,
@@ -211,7 +211,7 @@ describe("Server Unit Tests", () => {
             });
 
             it("success", async () => {
-                nock(PEACH_API_HOST).get(types.ENDPOINT_BLOCK_HEIGHT).reply(200, { height: 1000000 });
+                nock(MFS_API_HOST).get(types.ENDPOINT_BLOCK_HEIGHT).reply(200, { height: 1000000 });
                 expectedData = { ...successResp };
                 expectedActions = [
                     {

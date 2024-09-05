@@ -39,7 +39,7 @@ const WalletMode = ({
                         </div>
                         <div className="card__description">
                             In this mode you will have a few extra features not yet present in the standard Lightning
-                            Network. These features rely on the Peach server to route a transaction.
+                            Network. These features rely on the MFS server to route a transaction.
                         </div>
                         <ul className="card__list">
                             <div className="card__list-title">
@@ -81,7 +81,7 @@ const WalletMode = ({
                             Standard Mode
                         </div>
                         <div className="card__description">
-                            In this mode your wallet will never connect to the Peach server for any reason. The Extended
+                            In this mode your wallet will never connect to the MFS server for any reason. The Extended
                             Mode features will be disabled.
                             <ul className="card__list">
                                 <li className="card__list-item">

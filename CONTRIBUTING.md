@@ -1,8 +1,8 @@
-# Contributing to Peach wallet
+# Contributing to MFS wallet
 
 ## Overview
 
-Are you here because you are interested in lightning technology and want to help with Peach wallet?
+Are you here because you are interested in lightning technology and want to help with MFS wallet?
 Awesome, feel welcome and read the following section to understand how it works.
 If you get stuck at any point you can create a ticket on GitHub.
 The basic premise of the approach is to announce your plans before you start work, and once you have started working, craft your changes into a stream of small and easily reviewable commits.
@@ -89,4 +89,4 @@ In cases when commits can't match any category, please submit your PR untagged.
 #### Licensing of Contributions
 ****
 All contributions must be licensed with the [APACHE license](LICENCE).
-This is the same license as all of the code found within Peach wallet.
+This is the same license as all of the code found within MFS wallet.

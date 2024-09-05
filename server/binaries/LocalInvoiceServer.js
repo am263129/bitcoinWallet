@@ -10,8 +10,8 @@ const logger = (require("../utils/logger")).child("[LIS]");
 
 const ec = new Elliptic("secp256k1");
 
-const LIS_PROTOCOL = `ws${settings.get.peach.replenishTLS ? "s" : ""}://`;
-const LIS_HOST = `${LIS_PROTOCOL}${settings.get.peach.replenishUrl}`;
+const LIS_PROTOCOL = `ws${settings.get.MFS.replenishTLS ? "s" : ""}://`;
+const LIS_HOST = `${LIS_PROTOCOL}${settings.get.MFS.replenishUrl}`;
 
 const types = {
     ADD_INVOICE_REMOTE_REQUEST: "ADD_INVOICE_REMOTE_REQUEST",
@@ -334,7 +334,7 @@ const requestInvoice = async (amount, lightningId, memo) => {
     const id = `${Date.now()}${crypto.randomBytes(5).toString("hex")}`;
 
     let defParams;
-    if (lightningId === settings.get.peach.pubKey) {
+    if (lightningId === settings.get.MFS.pubKey) {
         defParams = {
             _key: id,
             action: types.ADD_INVOICE_REMOTE_REQUEST,

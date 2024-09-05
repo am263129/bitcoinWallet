@@ -59,7 +59,7 @@ const updaterManager = () => {
         logger.debug("[UPDATER]: Update is found");
         dialog.showMessageBox({
             type: "info",
-            title: "Update the Peach Wallet",
+            title: "Update the MFS Wallet",
             message: "New update is available. Update now?",
             buttons: ["Update now", "Remind me later"],
         }, (buttonIndex) => {

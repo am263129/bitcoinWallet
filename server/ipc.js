@@ -140,8 +140,8 @@ registerIpc("connectPeer", async (event, arg) => lnd.call("ConnectPeer", arg));
 
 registerIpc("connectServerLnd", async () => lnd.call("ConnectPeer", {
     addr: {
-        pubkey: settings.get.peach.pubKey,
-        host: `${settings.get.peach.host}:${settings.get.peach.peerPort}`,
+        pubkey: settings.get.MFS.pubKey,
+        host: `${settings.get.MFS.host}:${settings.get.MFS.peerPort}`,
     },
 }));
 

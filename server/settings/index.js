@@ -4,19 +4,19 @@ const { join } = require("path");
 const { app } = require("electron");
 const configSchema = require("./config-schema");
 const settingsFiles = require("./settings-app");
-const settingsPeach = require("./settings-peach");
+const settingsMFS = require("./settings-MFS");
 const calculated = require("./calculated");
 const baseLogger = require("../utils/logger");
 
 const logger = baseLogger.child("electron");
 const readSettings = ({ appPath, dataPath, config }) => {
     const baseSettings = settingsFiles(appPath);
-    const peachSettings = settingsPeach(appPath);
+    const MFSSettings = settingsMFS(appPath);
     config.load(baseSettings);
-    config.load(peachSettings);
+    config.load(MFSSettings);
     return {
         baseSettings,
-        peachSettings,
+        MFSSettings,
     };
 };
 const binaryName = (name) => {
@@ -89,7 +89,7 @@ module.exports = Object.freeze({
         getAnalytics: config.get("analytics"),
         getBitcoin: config.get("bitcoin"),
         getDatabasePath: calculatedBase.databasePath,
-        getPeach: config.get("peach"),
+        getMFS: config.get("MFS"),
         getVersion: config.get("version"),
         getDevMode: config.get("backend.devMode"),
         getInitListenPort: config.get("lnd.init_listen"),

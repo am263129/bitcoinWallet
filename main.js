@@ -25,13 +25,13 @@ let deepLinkUrl;
 
 const template = [
     {
-        label: "Peach Wallet",
+        label: "MFS Wallet",
         submenu: [
             { label: "Hide", accelerator: "CmdOrCtrl+H", role: "hide" },
             { label: "Minimize", accelerator: "CmdOrCtrl+M", role: "minimize" },
             { accelerator: "CmdOrCtrl+F", role: "togglefullscreen" },
             { type: "separator" },
-            { label: "Quit Peach Wallet", accelerator: "CmdOrCtrl+Q", role: "quit" },
+            { label: "Quit MFS Wallet", accelerator: "CmdOrCtrl+Q", role: "quit" },
         ],
     },
     {
@@ -190,7 +190,7 @@ app.on("second-instance", (e, arg) => {
 
 ipcMain.on("showNotification", (event, sender) => {
     notification = new Notification({
-        title: sender.title || "Peach Wallet",
+        title: sender.title || "MFS Wallet",
         subtitle: sender.subtitle,
         body: sender.body,
         silent: sender.silent,

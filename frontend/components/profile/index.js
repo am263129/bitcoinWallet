@@ -563,7 +563,7 @@ class Profile extends Component {
                             <div className="profile__label" />
                             <div className="profile__value">
                                 <span className="text-grey">
-                                    Using QR code you can control your wallet remotely using the Peach Wallet mobile
+                                    Using QR code you can control your wallet remotely using the MFS Wallet mobile
                                     app.
                                 </span>
                             </div>
@@ -576,14 +576,14 @@ class Profile extends Component {
                             {
                                 appAsDefaultStatus ?
                                     <span className="profile__app-status">
-                                        Peach Wallet is your default lightning wallet
+                                        MFS Wallet is your default lightning wallet
                                     </span> :
                                     <button
                                         type="button"
                                         className="button button__link profile__app-status"
                                         onClick={this.sendSetDefaultStatus}
                                     >
-                                        Set <b>Peach Wallet</b> as your default lightning wallet
+                                        Set <b>MFS Wallet</b> as your default lightning wallet
                                     </button>
                             }
                             <button

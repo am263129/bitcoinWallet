@@ -9,20 +9,20 @@ const loadJson = filePath => JSON.parse(fs.readFileSync(filePath).toString());
 describe("Settings tests", () => {
     describe("Mainnet", () => {
         const settingsFileExists = fs.existsSync(path.join(__dirname, "../../settings.ini"));
-        const peachSettingsFileExists = fs.existsSync(path.join(__dirname, "../../settings.peach.json"));
+        const MFSSettingsFileExists = fs.existsSync(path.join(__dirname, "../../settings.MFS.json"));
 
         it("settings.ini file exists", () => {
             expect(settingsFileExists).to.deep.equal(true);
         });
 
-        it("settings.peach.json file exists", () => {
-            expect(peachSettingsFileExists).to.deep.equal(true);
+        it("settings.MFS.json file exists", () => {
+            expect(MFSSettingsFileExists).to.deep.equal(true);
         });
 
         let settings = {};
 
         settings = merge(settings, loadIni(path.join(__dirname, "../../settings.ini")));
-        settings = merge(settings, loadJson(path.join(__dirname, "../../settings.peach.json")));
+        settings = merge(settings, loadJson(path.join(__dirname, "../../settings.MFS.json")));
 
         it("devMode set to false", () => {
             expect(settings.backend.devMode).to.deep.equal(false);
@@ -94,47 +94,47 @@ describe("Settings tests", () => {
         });
 
         it("correct analytics appUrl", () => {
-            expect(settings.analytics.appUrl).to.deep.equal("https://peach-wallet.local.com");
+            expect(settings.analytics.appUrl).to.deep.equal("https://MFS-wallet.local.com");
         });
 
-        it("correct peach pubKey", () => {
-            expect(settings.peach.pubKey)
+        it("correct MFS pubKey", () => {
+            expect(settings.MFS.pubKey)
                 .to.deep.equal("02a0bc43557fae6af7be8e3a29fdebda819e439bea9c0f8eb8ed6a0201f3471ca9");
         });
 
-        it("correct peach host", () => {
-            expect(settings.peach.host).to.deep.equal("hub.lightningpeach.com");
+        it("correct MFS host", () => {
+            expect(settings.MFS.host).to.deep.equal("hub.lightningMFS.com");
         });
 
-        it("correct peach peerPort", () => {
-            expect(settings.peach.peerPort).to.deep.equal("29735");
+        it("correct MFS peerPort", () => {
+            expect(settings.MFS.peerPort).to.deep.equal("29735");
         });
 
-        it("correct peach replenishUrl", () => {
-            expect(settings.peach.replenishUrl).to.deep.equal("proxy.lightningpeach.com:7000");
+        it("correct MFS replenishUrl", () => {
+            expect(settings.MFS.replenishUrl).to.deep.equal("proxy.lightningMFS.com:7000");
         });
 
-        it("correct peach replenishTLS", () => {
-            expect(settings.peach.replenishTLS).to.deep.equal(true);
+        it("correct MFS replenishTLS", () => {
+            expect(settings.MFS.replenishTLS).to.deep.equal(true);
         });
     });
 
     describe("Testnet", () => {
         const settingsFileExists = fs.existsSync(path.join(__dirname, "../../settings.testnet.ini"));
-        const peachSettingsFileExists = fs.existsSync(path.join(__dirname, "../../settings.testnet.peach.json"));
+        const MFSSettingsFileExists = fs.existsSync(path.join(__dirname, "../../settings.testnet.MFS.json"));
 
         it("settings.ini file exists", () => {
             expect(settingsFileExists).to.deep.equal(true);
         });
 
-        it("settings.peach.json file exists", () => {
-            expect(peachSettingsFileExists).to.deep.equal(true);
+        it("settings.MFS.json file exists", () => {
+            expect(MFSSettingsFileExists).to.deep.equal(true);
         });
 
         let settings = {};
 
         settings = merge(settings, loadIni(path.join(__dirname, "../../settings.testnet.ini")));
-        settings = merge(settings, loadJson(path.join(__dirname, "../../settings.testnet.peach.json")));
+        settings = merge(settings, loadJson(path.join(__dirname, "../../settings.testnet.MFS.json")));
 
         it("devMode set to false", () => {
             expect(settings.backend.devMode).to.deep.equal(false);
@@ -206,28 +206,28 @@ describe("Settings tests", () => {
         });
 
         it("correct analytics appUrl", () => {
-            expect(settings.analytics.appUrl).to.deep.equal("https://peach-wallet.local.com");
+            expect(settings.analytics.appUrl).to.deep.equal("https://MFS-wallet.local.com");
         });
 
-        it("correct peach pubKey", () => {
-            expect(settings.peach.pubKey)
+        it("correct MFS pubKey", () => {
+            expect(settings.MFS.pubKey)
                 .to.deep.equal("0389a4d10d30e6176ea7cd0a7060344108061fc9ca88b02fa52dacea4b0114b316");
         });
 
-        it("correct peach host", () => {
-            expect(settings.peach.host).to.deep.equal("testnetwallet.lightningpeach.com");
+        it("correct MFS host", () => {
+            expect(settings.MFS.host).to.deep.equal("testnetwallet.lightningMFS.com");
         });
 
-        it("correct peach peerPort", () => {
-            expect(settings.peach.peerPort).to.deep.equal("9735");
+        it("correct MFS peerPort", () => {
+            expect(settings.MFS.peerPort).to.deep.equal("9735");
         });
 
-        it("correct peach replenishUrl", () => {
-            expect(settings.peach.replenishUrl).to.deep.equal("testnetwallet.lightningpeach.com");
+        it("correct MFS replenishUrl", () => {
+            expect(settings.MFS.replenishUrl).to.deep.equal("testnetwallet.lightningMFS.com");
         });
 
-        it("correct peach replenishTLS", () => {
-            expect(settings.peach.replenishTLS).to.deep.equal(true);
+        it("correct MFS replenishTLS", () => {
+            expect(settings.MFS.replenishTLS).to.deep.equal(true);
         });
     });
 });

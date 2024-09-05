@@ -58,7 +58,7 @@ class ConnectRemoteQR extends Component {
                 <div className="modal__body">
                     <div className="row">
                         <div className="col-xs-12 text-center">
-                            You can connect the Peach mobile wallet to this desktop
+                            You can connect the MFS mobile wallet to this desktop
                             node by scanning the QR code on this screen.
                         </div>
                     </div>

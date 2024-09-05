@@ -137,7 +137,7 @@ module.exports = {
             default: "DEBUG",
         },
     },
-    peach: {
+    MFS: {
         pubKey: {
             doc: "",
             format: String,

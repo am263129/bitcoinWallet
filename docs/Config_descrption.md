@@ -24,7 +24,7 @@ node = neutrino
 network = mainnet
 
 [neutrino]
-connect = proxy.lightningpeach.com:8333
+connect = proxy.lightningMFS.com:8333
 
 [btcd]
 rpcuser = rpcuser

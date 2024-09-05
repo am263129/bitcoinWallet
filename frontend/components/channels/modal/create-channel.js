@@ -110,7 +110,7 @@ class CreateChannel extends Component {
             });
             return;
         }
-        let lightningId = nodeSettings.PEACH.pubKey;
+        let lightningId = nodeSettings.MFS.pubKey;
         let peer = null;
         this.setState({ amountError, lightningError, nameError });
         if (this.state.custom) {
@@ -118,7 +118,7 @@ class CreateChannel extends Component {
             lightningId = tempLight;
             peer = tempPeer;
         } else {
-            peer = [nodeSettings.PEACH.host, nodeSettings.PEACH.peerPort].join(":");
+            peer = [nodeSettings.MFS.host, nodeSettings.MFS.peerPort].join(":");
         }
         amount = dispatch(appOperations.convertToSatoshi(amount));
         name = name || `CHANNEL ${firstEmptyChannelDefaultName}`;
@@ -244,9 +244,9 @@ class CreateChannel extends Component {
                                 By default, new channels are opened with the&nbsp;
                                 <button
                                     className="link"
-                                    onClick={() => window.ELECTRON_SHELL.openExternal(consts.PEACH_NODE_URL)}
+                                    onClick={() => window.ELECTRON_SHELL.openExternal(consts.MFS_NODE_URL)}
                                 >
-                                    Lightning Peach public node
+                                    Lightning MFS public node
                                 </button>. You can open a custom channel by manually specifying a peer address.
                             </span>
                             <div className="channels__create-buttons">
